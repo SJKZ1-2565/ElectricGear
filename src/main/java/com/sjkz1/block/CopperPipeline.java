@@ -29,7 +29,7 @@ public class CopperPipeline extends BlockWithEntity {
 
     protected CopperPipeline(Settings settings) {
         super(settings);
-        this.setDefaultState(this.stateManager.getDefaultState().with(FACING, Direction.DOWN));
+        this.setDefaultState(this.stateManager.getDefaultState().with(FACING, Direction.UP));
     }
 
     @Override
@@ -102,6 +102,7 @@ public class CopperPipeline extends BlockWithEntity {
 
     @Override
     public BlockState rotate(BlockState state, BlockRotation rotation) {
+
         return state.with(FACING, rotation.rotate(state.get(FACING)));
     }
 

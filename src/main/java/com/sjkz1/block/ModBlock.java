@@ -13,7 +13,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
 public class ModBlock {
-    public static final Block COPPER_PIPELINE = new CopperPipeline(AbstractBlock.Settings.copy(Blocks.COPPER_BLOCK));
+    public static final Block COPPER_PIPELINE = new CopperPipeline(AbstractBlock.Settings.copy(Blocks.SPAWNER));
     public static final BlockEntityType<CopperPipelineBlockEntity> COPPER_PIPELINE_BLOCK_ENTITY = Registry.register(Registries.BLOCK_ENTITY_TYPE, Identifier.of(ElectricGear.MOD_ID, "copper_pipeline"), FabricBlockEntityTypeBuilder.create(CopperPipelineBlockEntity::new, ModBlock.COPPER_PIPELINE).build());
 
     public static void init() {
