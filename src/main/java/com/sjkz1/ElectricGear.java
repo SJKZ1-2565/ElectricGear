@@ -1,5 +1,6 @@
 package com.sjkz1;
 
+import com.sjkz1.block.ModBlock;
 import com.sjkz1.enchant.ModEnchants;
 import com.sjkz1.item.ModItem;
 import net.fabricmc.api.ModInitializer;
@@ -14,6 +15,7 @@ public class ElectricGear implements ModInitializer {
     @Override
     public void onInitialize() {
         ModItem.init();
+        ModBlock.init();
         ModEnchants.init();
         LOGGER.info("Hello Fabric world!");
     }

@@ -1,4 +1,6 @@
 {
+  "block.electric-gear.copper_pipeline": "ท่อทองแดง",
+  "container.copper_pipeline": "ท่อทองแดง",
   "enchantment.electric-gear.voltage": "แรงดันไฟฟ้า",
   "item.electric-gear.copper_axe": "ขวานทองแดง",
   "item.electric-gear.copper_boots": "รองเท้าทองแดง",

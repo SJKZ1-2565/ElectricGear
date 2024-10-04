@@ -1,4 +1,6 @@
 {
+  "block.electric-gear.copper_pipeline": "Copper Popline",
+  "container.copper_pipeline": "Copper Pipeline",
   "enchantment.electric-gear.voltage": "Voltage",
   "item.electric-gear.copper_axe": "Copper Axe",
   "item.electric-gear.copper_boots": "Copper Boots",

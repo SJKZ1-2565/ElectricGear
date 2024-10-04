@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "electric-gear:block/copper_pipeline"
+    }
+  }
+}

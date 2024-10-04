@@ -1,5 +1,6 @@
 package com.sjkz1.datagen;
 
+import com.sjkz1.block.ModBlock;
 import com.sjkz1.enchant.ModEnchants;
 import com.sjkz1.item.ModItem;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -21,7 +22,9 @@ public class ElectricGearLanguageGenerator extends FabricLanguageProvider {
         translationBuilder.add(ModItem.COPPER_CHESTPLATE, "Copper Chestplate");
         translationBuilder.add(ModItem.COPPER_LEGGINGS, "Copper Leggings");
         translationBuilder.add(ModItem.COPPER_BOOTS, "Copper Boots");
+        translationBuilder.add(ModBlock.COPPER_PIPELINE, "Copper Popline");
         translationBuilder.add(ModEnchants.VOLTAGE, "Voltage");
+        translationBuilder.add("container.copper_pipeline", "Copper Pipeline");
     }
 
     static class ElectricGearThaiLanguageGenerator extends FabricLanguageProvider {
@@ -40,7 +43,10 @@ public class ElectricGearLanguageGenerator extends FabricLanguageProvider {
             translationBuilder.add(ModItem.COPPER_CHESTPLATE, "เสื้อเกราะทองแดง");
             translationBuilder.add(ModItem.COPPER_LEGGINGS, "กางเกงทองแดง");
             translationBuilder.add(ModItem.COPPER_BOOTS, "รองเท้าทองแดง");
+            translationBuilder.add(ModBlock.COPPER_PIPELINE, "ท่อทองแดง");
             translationBuilder.add(ModEnchants.VOLTAGE, "แรงดันไฟฟ้า");
+            translationBuilder.add("container.copper_pipeline", "ท่อทองแดง");
+
         }
     }
 }

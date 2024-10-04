@@ -1,5 +1,6 @@
 package com.sjkz1.datagen;
 
+import com.sjkz1.block.ModBlock;
 import com.sjkz1.item.ModItem;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
@@ -14,7 +15,7 @@ public class ElectricGearModelGenerator extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
-
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlock.COPPER_PIPELINE);
     }
 
     @Override
