@@ -1,0 +1,44 @@
+{
+	"schemaVersion": 1,
+	"id": "electric-gear",
+	"version": "${version}",
+	"name": "Electric Gear",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/electric-gear/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.sjkz1.ElectricGear"
+		],
+		"client": [
+			"com.sjkz1.ElectricGearClient"
+		],
+		"fabric-datagen": [
+          "com.sjkz1.datagen.ElectricGearDataGenerator"
+		]
+	},
+	"mixins": [
+		"electric-gear.mixins.json",
+		{
+			"config": "electric-gear.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.16.5",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
