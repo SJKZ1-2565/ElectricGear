@@ -4,9 +4,8 @@ import com.sjkz1.block.ModBlock;
 import com.sjkz1.item.ModItem;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
-import net.minecraft.data.client.BlockStateModelGenerator;
-import net.minecraft.data.client.ItemModelGenerator;
-import net.minecraft.data.client.Models;
+import net.minecraft.block.Block;
+import net.minecraft.data.client.*;
 
 public class ElectricGearModelGenerator extends FabricModelProvider {
     public ElectricGearModelGenerator(FabricDataOutput output) {
@@ -15,7 +14,7 @@ public class ElectricGearModelGenerator extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlock.COPPER_PIPELINE);
+        registerCopperPipeline(blockStateModelGenerator);
     }
 
     @Override
@@ -29,5 +28,13 @@ public class ElectricGearModelGenerator extends FabricModelProvider {
         itemModelGenerator.register(ModItem.COPPER_CHESTPLATE, Models.GENERATED);
         itemModelGenerator.register(ModItem.COPPER_LEGGINGS, Models.GENERATED);
         itemModelGenerator.register(ModItem.COPPER_BOOTS, Models.GENERATED);
+    }
+
+    private void registerCopperPipeline(BlockStateModelGenerator blockStateModelGenerator) {
+        Block block = ModBlock.COPPER_PIPELINE;
+        blockStateModelGenerator.blockStateCollector
+                .accept(
+                        VariantsBlockStateSupplier.create(block, BlockStateVariant.create().put(VariantSettings.MODEL, ModelIds.getBlockModelId(block)))
+                                .coordinate(blockStateModelGenerator.createUpDefaultFacingVariantMap()));
     }
 }

@@ -92,7 +92,7 @@ public class CopperPipelineBlockEntity extends LootableContainerBlockEntity {
             ItemStack itemStack = copperPipelineBlockEntity.getStack(i);
             if (world.getTime() % 20 == 0) {
                 if (!itemStack.isEmpty()) {
-                    var direction = world.getBlockState(blockPos).get(Properties.FACING);
+                    Direction direction = world.getBlockState(blockPos).get(Properties.FACING);
                     Inventory inventory = HopperBlockEntity.getInventoryAt(world, blockPos.offset(direction));
                     ItemStack itemStack2;
                     if (inventory == null) {

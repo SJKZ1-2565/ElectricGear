@@ -1,7 +1,30 @@
 {
   "variants": {
-    "": {
+    "facing=down": {
+      "model": "electric-gear:block/copper_pipeline",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "electric-gear:block/copper_pipeline",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "electric-gear:block/copper_pipeline",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "electric-gear:block/copper_pipeline",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
       "model": "electric-gear:block/copper_pipeline"
+    },
+    "facing=west": {
+      "model": "electric-gear:block/copper_pipeline",
+      "x": 90,
+      "y": 270
     }
   }
 }
