@@ -14,7 +14,7 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 
 public class ModBlock {
-    public static final Block COPPER_PIPELINE = new CopperPipeline(AbstractBlock.Settings.create().mapColor(MapColor.ORANGE).requiresTool().strength(2.0F, 6.0F).sounds(BlockSoundGroup.COPPER).nonOpaque());
+    public static final Block COPPER_PIPELINE = new CopperPipeline(AbstractBlock.Settings.create().mapColor(MapColor.ORANGE).requiresTool().strength(3.0F, 4.8F).sounds(BlockSoundGroup.METAL).nonOpaque());
     public static final BlockEntityType<CopperPipelineBlockEntity> COPPER_PIPELINE_BLOCK_ENTITY = Registry.register(Registries.BLOCK_ENTITY_TYPE, Identifier.of(ElectricGear.MOD_ID, "copper_pipeline"), FabricBlockEntityTypeBuilder.create(CopperPipelineBlockEntity::new, ModBlock.COPPER_PIPELINE).build());
 
     public static void init() {
