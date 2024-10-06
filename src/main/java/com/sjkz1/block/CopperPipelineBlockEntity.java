@@ -11,6 +11,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.property.Properties;
 import net.minecraft.text.Text;
 import net.minecraft.util.collection.DefaultedList;
@@ -106,6 +108,10 @@ public class CopperPipelineBlockEntity extends LootableContainerBlockEntity {
                             itemStack2 = itemStack.copy();
                         }
                     }
+                    //TODO playsound maybe?
+//                    if (world.random.nextFloat() <= 0.8F) {
+//                        world.playSoundAtBlockCenter(blockPos, SoundEvents.ENTITY_FIREWORK_ROCKET_BLAST, SoundCategory.BLOCKS,1.0F,1.0F,false);
+//                    }
                     copperPipelineBlockEntity1.setStack(i, itemStack2);
                 }
             }
