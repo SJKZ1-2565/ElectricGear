@@ -2,6 +2,7 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 64],
 	"textures": {
+		"pipe" : "electric-gear:block/copper_pipeline",
 		"particle": "electric-gear:block/copper_pipeline"
 	},
 	"elements": [
@@ -10,12 +11,12 @@
 			"to": [13, 21, 13],
 			"rotation": {"angle": 0, "axis": "y", "origin": [3, 0, 7]},
 			"faces": {
-				"north": {"uv": [0, 0, 2.5, 5.25], "texture": "#missing"},
-				"east": {"uv": [2.5, 0, 5, 5.25], "texture": "#missing"},
-				"south": {"uv": [5, 0, 7.5, 5.25], "texture": "#missing"},
-				"west": {"uv": [0, 5.25, 2.5, 10.5], "texture": "#missing"},
-				"up": {"uv": [5, 7.75, 2.5, 5.25], "texture": "#missing"},
-				"down": {"uv": [7.5, 5.25, 5, 7.75], "texture": "#missing"}
+				"north": {"uv": [0, 0, 2.5, 5.25], "texture": "#pipe"},
+				"east": {"uv": [2.5, 0, 5, 5.25], "texture": "#pipe"},
+				"south": {"uv": [5, 0, 7.5, 5.25], "texture": "#pipe"},
+				"west": {"uv": [0, 5.25, 2.5, 10.5], "texture": "#pipe"},
+				"up": {"uv": [5, 7.75, 2.5, 5.25], "texture": "#pipe"},
+				"down": {"uv": [7.5, 5.25, 5, 7.75], "texture": "#pipe"}
 			}
 		}
 	],

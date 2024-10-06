@@ -8,14 +8,27 @@ import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 
 public class CopperArmorMaterials implements ArmorMaterial {
+
+    public static final CopperArmorMaterials INSTANCE = new CopperArmorMaterials();
+
     @Override
     public int getDurability(ArmorItem.Type type) {
-        return 15;
+        int DURABILITY_MULTIPLIER = 12;
+        return switch (type) {
+            case BOOTS -> 13 * DURABILITY_MULTIPLIER;
+            case LEGGINGS -> 15 * DURABILITY_MULTIPLIER;
+            case CHESTPLATE -> 16 * DURABILITY_MULTIPLIER;
+            case HELMET -> 11 * DURABILITY_MULTIPLIER;
+        };
     }
 
     @Override
     public int getProtection(ArmorItem.Type type) {
-        return type.equals(ArmorItem.Type.BOOTS) ? 1 : type.equals(ArmorItem.Type.LEGGINGS) ? 4 : type.equals(ArmorItem.Type.CHESTPLATE) ? 5 : type.equals(ArmorItem.Type.HELMET) ? 2 : 1;
+        return switch (type) {
+            case BOOTS, HELMET -> 3;
+            case LEGGINGS -> 6;
+            case CHESTPLATE -> 8;
+        };
     }
 
     @Override
