@@ -1,4 +1,4 @@
-// 1.20.1	2024-10-06T15:08:24.4743782	Electric Gear/Recipes
+// 1.20.1	2024-10-06T20:20:22.5603592	Electric Gear/Recipes
 2d4fdfc1a603bd358f191bd51499d8f4342c6897 data\electric-gear\advancements\recipes\combat\copper_chestplate.json
 0f9e28d968b5fc0b43d13a31e1abbc87e0d9bacf data\electric-gear\recipes\copper_sword.json
 494fa07ca203a556d54eb721b293487f201eb606 data\electric-gear\advancements\recipes\combat\copper_helmet.json
@@ -12,8 +12,8 @@ f0b9e4b30308d51e168f7ac3c2096f0a27e35190 data\electric-gear\advancements\recipes
 aa7962acc5be3cd7c79582b943144d76ad66dff8 data\electric-gear\advancements\recipes\combat\copper_boots.json
 9e3bea51513e4f9ab14f1809ec9b4c74195d6cd7 data\electric-gear\recipes\copper_leggings.json
 665836974748ce8c958d6f9d04166199e8a6138f data\electric-gear\recipes\copper_hoe.json
-f2d220a9dd0dc3fdbda850f5ea32303f95345219 data\electric-gear\recipes\copper_axe.json
 9f167cb105f37855114b09411e53bcaf7ff813c7 data\electric-gear\advancements\recipes\tools\copper_pickaxe.json
+f2d220a9dd0dc3fdbda850f5ea32303f95345219 data\electric-gear\recipes\copper_axe.json
 6250852249edc1b487cbc3e9c38c332af8160369 data\electric-gear\advancements\recipes\tools\copper_shovel.json
 5043509f61ef178971fe21859c0c92c11de71adc data\electric-gear\recipes\copper_helmet.json
 aaad56484031891822955d95ca270ef41995798a data\electric-gear\recipes\copper_chestplate.json

@@ -13,6 +13,7 @@ public class ElectricGearDataGenerator implements DataGeneratorEntrypoint {
         pack.addProvider(ElectricGearLanguageGenerator.ElectricGearThaiLanguageGenerator::new);
         pack.addProvider(ElectricGearLooTableGenerator::new);
         pack.addProvider(ElectricGearBlockTagGenerator::new);
+        pack.addProvider(ElectricGearItemTagGenerator::new);
     }
 
 }
