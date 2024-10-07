@@ -38,7 +38,7 @@ public class ElectricGear implements ModInitializer {
         ModItem.init();
         ModBlock.init();
         ModEnchants.init();
-        CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> GiveAllTrimToolsCommand.register(dispatcher, registryAccess));
+        CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> GiveAllTrimToolsCommand.register(dispatcher));
         LOGGER.info("Hello Fabric world!");
     }
 }
