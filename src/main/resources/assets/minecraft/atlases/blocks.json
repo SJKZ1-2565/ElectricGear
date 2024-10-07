@@ -4,7 +4,10 @@
       "type": "paletted_permutations",
       "textures": [
         "electric-gear:trims/items/axe_trim",
-        "electric-gear:trims/items/sword_trim"
+        "electric-gear:trims/items/sword_trim",
+        "electric-gear:trims/items/shovel_trim",
+        "electric-gear:trims/items/pickaxe_trim",
+        "electric-gear:trims/items/hoe_trim"
       ],
       "palette_key": "trims/color_palettes/trim_palette",
       "permutations": {

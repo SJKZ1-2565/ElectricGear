@@ -7,7 +7,6 @@ import com.sjkz1.enchant.ModEnchants;
 import com.sjkz1.item.ModItem;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricDynamicRegistryProvider;
 import net.minecraft.entity.damage.DamageType;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.item.Item;
@@ -44,8 +43,34 @@ public class ElectricGear implements ModInitializer {
             Items.GOLDEN_AXE,
             Items.DIAMOND_AXE,
             Items.NETHERITE_AXE,
-            Items.NETHERITE_SWORD,
-            Items.STONE_SWORD
+
+            Items.WOODEN_PICKAXE,
+            Items.STONE_PICKAXE,
+            Items.IRON_PICKAXE,
+            Items.GOLDEN_PICKAXE,
+            Items.DIAMOND_PICKAXE,
+            Items.NETHERITE_PICKAXE,
+
+            Items.WOODEN_HOE,
+            Items.STONE_HOE,
+            Items.IRON_HOE,
+            Items.GOLDEN_HOE,
+            Items.DIAMOND_HOE,
+            Items.NETHERITE_HOE,
+
+            Items.WOODEN_SHOVEL,
+            Items.STONE_SHOVEL,
+            Items.IRON_SHOVEL,
+            Items.GOLDEN_SHOVEL,
+            Items.DIAMOND_SHOVEL,
+            Items.NETHERITE_SHOVEL,
+
+            Items.WOODEN_SWORD,
+            Items.STONE_SWORD,
+            Items.IRON_SWORD,
+            Items.GOLDEN_SWORD,
+            Items.DIAMOND_SWORD,
+            Items.NETHERITE_SWORD
     );
 
     @Override
