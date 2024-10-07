@@ -3,6 +3,8 @@ package com.sjkz1.command;
 import com.mojang.brigadier.CommandDispatcher;
 import com.sjkz1.ElectricGear;
 import net.minecraft.entity.decoration.ArmorStandEntity;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.trim.*;
@@ -62,6 +64,9 @@ public class GiveAllTrimToolsCommand {
                     armorStandEntity.setStackInHand(Hand.MAIN_HAND, itemStack);
                     armorStandEntity.setNoGravity(true);
                     armorStandEntity.setShowArms(true);
+                    if (itemStack.getItem().toString().contains(registry2.getEntry(material).get().value().assetName())) {
+                        armorStandEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.GLOWING,StatusEffectInstance.INFINITE));
+                    }
                     world.spawnEntity(armorStandEntity);
                     k++;
                 }
