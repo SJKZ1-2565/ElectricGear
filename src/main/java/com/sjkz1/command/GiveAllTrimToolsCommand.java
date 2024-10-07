@@ -1,10 +1,10 @@
 package com.sjkz1.command;
 
 import com.mojang.brigadier.CommandDispatcher;
+import com.sjkz1.ElectricGear;
 import net.minecraft.entity.decoration.ArmorStandEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.item.trim.*;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
@@ -20,16 +20,7 @@ import net.minecraft.world.World;
 import java.util.List;
 
 public class GiveAllTrimToolsCommand {
-    private static final List<Item> ITEM = List.of(
-            Items.WOODEN_AXE,
-            Items.STONE_AXE,
-            Items.IRON_AXE,
-            Items.GOLDEN_AXE,
-            Items.DIAMOND_AXE,
-            Items.NETHERITE_AXE,
-            Items.NETHERITE_SWORD,
-            Items.STONE_SWORD
-    );
+
     private static final List<RegistryKey<ArmorTrimMaterial>> MATERIALS = List.of(
             ArmorTrimMaterials.QUARTZ,
             ArmorTrimMaterials.IRON,
@@ -57,7 +48,7 @@ public class GiveAllTrimToolsCommand {
         Registry<ArmorTrimMaterial> registry2 = world.getRegistryManager().get(RegistryKeys.TRIM_MATERIAL);
         int j = 0;
         int k = 0;
-        for (Item item : ITEM) {
+        for (Item item : ElectricGear.ITEM) {
             for (var material : MATERIALS) {
                 ArmorTrim armorTrim1 = new ArmorTrim(registry2.getEntry(material).get(), registry.getEntry(ArmorTrimPatterns.SENTRY).get());
                 if (item != null) {

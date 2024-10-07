@@ -22,5 +22,7 @@ public class ElectricGearItemTagGenerator extends FabricTagProvider.ItemTagProvi
         this.getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR).add(Items.GOLDEN_AXE);
         this.getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR).add(Items.NETHERITE_AXE);
         this.getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR).add(Items.NETHERITE_SWORD);
+        this.getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR).add(Items.STONE_SWORD);
+        this.getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR).add(Items.GOLDEN_SWORD);
     }
 }
