@@ -43,13 +43,7 @@ public class ElectricGearModelGenerator extends FabricModelProvider {
         itemModelGenerator.register(ModItem.COPPER_HELMET, Models.GENERATED);
         itemModelGenerator.register(ModItem.COPPER_CHESTPLATE, Models.GENERATED);
         itemModelGenerator.register(ModItem.COPPER_LEGGINGS, Models.GENERATED);
-        itemModelGenerator.register(ModItem.COPPER_BOOTS, Models.GENERATED);
-
-//        for (int index = 0; index < ItemModelGenerator.TRIM_MATERIALS.size(); index++) {
-//            registerCustomToolTrim(itemModelGenerator, Items.WOODEN_AXE, ItemModelGenerator.TRIM_MATERIALS.get(index));
-//        }
-//        registerCustomToolTrim(itemModelGenerator, Items.WOODEN_AXE);
-//        registerCustomToolTrim(itemModelGenerator, Items.STONE_SWORD);
+        itemModelGenerator.register(ModItem.COPPER_BOOTS, Models.GENERATED);;
         for (Item item : ElectricGear.ITEM) {
             registerCustomToolTrim(itemModelGenerator, item);
         }
