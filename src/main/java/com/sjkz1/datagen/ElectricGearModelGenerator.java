@@ -53,14 +53,14 @@ public class ElectricGearModelGenerator extends FabricModelProvider {
         Identifier identifier = ModelIds.getItemModelId(item);
         Identifier identifier2 = TextureMap.getId(item);
         Models.HANDHELD.upload(identifier, TextureMap.layer0(identifier2), itemModelGenerator.writer, (id, textures) -> this.createItemJson(id, textures, item));
-        for (int i = 0; i < ItemModelGenerator.TRIM_MATERIALS.size(); i++) {
+        for (ItemModelGenerator.TrimMaterial material : ItemModelGenerator.TRIM_MATERIALS) {
             String itemString = getString(item);
-            Identifier identifier4 = this.suffixTrim(Identifier.of(ElectricGear.MOD_ID, identifier.getPath()), ItemModelGenerator.TRIM_MATERIALS.get(i).name());
+            Identifier identifier4 = this.suffixTrim(Identifier.of(ElectricGear.MOD_ID, identifier.getPath()), material.name());
             String darkerString = "";
-            if (item.toString().contains(ItemModelGenerator.TRIM_MATERIALS.get(i).name())) {
+            if (item.toString().contains(material.name())) {
                 darkerString = "_darker";
             }
-            String string2 = itemString + "_trim_" + ItemModelGenerator.TRIM_MATERIALS.get(i).name() + darkerString;
+            String string2 = itemString + "_trim_" + material.name() + darkerString;
             Identifier identifier5 = Identifier.of(ElectricGear.MOD_ID, string2).withPrefixedPath("trims/items/");
             HANDHELD_TWO_LAYERS.upload(identifier4, TextureMap.layered(identifier2, identifier5), itemModelGenerator.writer);
         }
