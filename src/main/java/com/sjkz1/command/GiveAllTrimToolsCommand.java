@@ -1,7 +1,6 @@
 package com.sjkz1.command;
 
 import com.mojang.brigadier.CommandDispatcher;
-import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.decoration.ArmorStandEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -27,7 +26,9 @@ public class GiveAllTrimToolsCommand {
             Items.IRON_AXE,
             Items.GOLDEN_AXE,
             Items.DIAMOND_AXE,
-            Items.NETHERITE_AXE
+            Items.NETHERITE_AXE,
+            Items.NETHERITE_SWORD,
+            Items.STONE_SWORD
     );
     private static final List<RegistryKey<ArmorTrimMaterial>> MATERIALS = List.of(
             ArmorTrimMaterials.QUARTZ,
@@ -62,10 +63,6 @@ public class GiveAllTrimToolsCommand {
                 if (item != null) {
                     ItemStack itemStack = new ItemStack(item);
                     ArmorTrim.apply(world.getRegistryManager(), itemStack, armorTrim1);
-                    ItemEntity itemEntity = new ItemEntity(world, playerOrThrow.getX(), playerOrThrow.getY(), playerOrThrow.getZ(), itemStack);
-                    itemEntity.setPickupDelay(40);
-                    world.spawnEntity(itemEntity);
-
                     BlockPos blockPos = playerOrThrow.getBlockPos().offset(playerOrThrow.getHorizontalFacing(), 5);
                     double e = (double) blockPos.getX() + 0.5 - (double) (j % registry2.size()) * 3.0;
                     double f = (double) blockPos.getY() + 0.5 + (double) (k % MATERIALS.size()) * 3.0;
