@@ -1,10 +1,12 @@
 package com.sjkz1;
 
 import com.sjkz1.block.ModBlock;
+import com.sjkz1.command.GiveAllTrimToolsCommand;
 import com.sjkz1.effect.ElectricShockEffect;
 import com.sjkz1.enchant.ModEnchants;
 import com.sjkz1.item.ModItem;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.minecraft.entity.damage.DamageType;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.registry.Registries;
@@ -36,6 +38,7 @@ public class ElectricGear implements ModInitializer {
         ModItem.init();
         ModBlock.init();
         ModEnchants.init();
+        CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> GiveAllTrimToolsCommand.register(dispatcher, registryAccess));
         LOGGER.info("Hello Fabric world!");
     }
 }
