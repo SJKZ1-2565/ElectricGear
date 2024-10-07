@@ -1,8 +1,9 @@
 package com.sjkz1.datagen;
 
+import com.sjkz1.ElectricGear;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
-import net.minecraft.item.Items;
+import net.minecraft.item.Item;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.ItemTags;
 
@@ -15,14 +16,8 @@ public class ElectricGearItemTagGenerator extends FabricTagProvider.ItemTagProvi
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup arg) {
-        this.getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR).add(Items.IRON_AXE);
-        this.getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR).add(Items.DIAMOND_AXE);
-        this.getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR).add(Items.WOODEN_AXE);
-        this.getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR).add(Items.STONE_AXE);
-        this.getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR).add(Items.GOLDEN_AXE);
-        this.getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR).add(Items.NETHERITE_AXE);
-        this.getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR).add(Items.NETHERITE_SWORD);
-        this.getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR).add(Items.STONE_SWORD);
-        this.getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR).add(Items.GOLDEN_SWORD);
+        for (Item item : ElectricGear.ITEM) {
+            this.getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR).add(item);
+        }
     }
 }
