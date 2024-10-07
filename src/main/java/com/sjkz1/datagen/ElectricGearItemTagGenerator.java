@@ -16,5 +16,11 @@ public class ElectricGearItemTagGenerator extends FabricTagProvider.ItemTagProvi
     @Override
     protected void configure(RegistryWrapper.WrapperLookup arg) {
         this.getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR).add(Items.IRON_AXE);
+        this.getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR).add(Items.DIAMOND_AXE);
+        this.getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR).add(Items.WOODEN_AXE);
+        this.getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR).add(Items.STONE_AXE);
+        this.getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR).add(Items.GOLDEN_AXE);
+        this.getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR).add(Items.NETHERITE_AXE);
+        this.getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR).add(Items.NETHERITE_SWORD);
     }
 }
