@@ -56,10 +56,15 @@ public class CopperPipeline extends BlockWithEntity {
     @Override
     public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
         var otherState = world.getBlockState(pos.offset(state.get(FACING)));
+        var otherStateOpposite = world.getBlockState(pos.offset(state.get(FACING).getOpposite()));
 
         if (otherState.isOf(this)) {
             return state.with(UP, false);
         }
+        if (otherState.isAir()) {
+            return state.with(UP, true);
+        }
+        if(otherStateOpposite.isAir()){}
 
         return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
     }

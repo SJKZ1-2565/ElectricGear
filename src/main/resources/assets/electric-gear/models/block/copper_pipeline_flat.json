@@ -2,7 +2,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 64],
 	"textures": {
-		"0": "electric-gear:block/copper_pipeline_flat"
+		"0": "electric-gear:block/copper_pipeline_flat",
+		"particle": "electric-gear:block/copper_pipeline_flat"
 	},
 	"elements": [
 		{
@@ -17,6 +18,40 @@
 				"up": {"uv": [8.5, 11.5, 6, 9], "texture": "#0"},
 				"down": {"uv": [11, 9, 8.5, 11.5], "texture": "#0"}
 			}
+		},
+		{
+			"from": [4, 16, 4],
+			"to": [12, 17, 12],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 16, 8]},
+			"faces": {
+				"north": {"uv": [0.25, 0.5, 2.25, 0.75], "texture": "#0"},
+				"east": {"uv": [2.75, 0.5, 4.75, 0.75], "texture": "#0"},
+				"south": {"uv": [5.25, 0.5, 7.25, 0.75], "texture": "#0"},
+				"west": {"uv": [0.25, 6, 2.25, 6.25], "texture": "#0"},
+				"up": {"uv": [8.25, 11.25, 6.25, 9.25], "texture": "#0"},
+				"down": {"uv": [10.75, 9.25, 8.75, 11.25], "texture": "#0"}
+			}
+		},
+		{
+			"from": [3.5, 17, 3.5],
+			"to": [12.5, 19, 12.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 18, 8]},
+			"faces": {
+				"north": {"uv": [0.25, 0, 2.25, 0.5], "texture": "#0"},
+				"east": {"uv": [2.75, 0, 4.75, 0.5], "texture": "#0"},
+				"south": {"uv": [5.25, 0, 7.25, 0.5], "texture": "#0"},
+				"west": {"uv": [0.25, 5.5, 2.25, 6], "texture": "#0"},
+				"up": {"uv": [8.25, 11.25, 6.25, 9.25], "texture": "#0"},
+				"down": {"uv": [10.75, 9.25, 8.75, 11.25], "texture": "#0"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "bone",
+			"origin": [8, 16, 8],
+			"color": 0,
+			"children": [0, 1, 2]
 		}
 	]
 }
