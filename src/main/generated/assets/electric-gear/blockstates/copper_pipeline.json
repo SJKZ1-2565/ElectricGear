@@ -1,30 +1,128 @@
 {
-  "variants": {
-    "facing=down": {
-      "model": "electric-gear:block/copper_pipeline",
-      "x": 180
+  "multipart": [
+    {
+      "apply": {
+        "model": "electric-gear:block/copper_pipeline"
+      },
+      "when": {
+        "facing": "up",
+        "up": "true"
+      }
     },
-    "facing=east": {
-      "model": "electric-gear:block/copper_pipeline",
-      "x": 90,
-      "y": 90
+    {
+      "apply": {
+        "model": "electric-gear:block/copper_pipeline_flat"
+      },
+      "when": {
+        "facing": "up",
+        "up": "false"
+      }
     },
-    "facing=north": {
-      "model": "electric-gear:block/copper_pipeline",
-      "x": 90
+    {
+      "apply": {
+        "model": "electric-gear:block/copper_pipeline",
+        "x": 180
+      },
+      "when": {
+        "facing": "down",
+        "up": "true"
+      }
     },
-    "facing=south": {
-      "model": "electric-gear:block/copper_pipeline",
-      "x": 90,
-      "y": 180
+    {
+      "apply": {
+        "model": "electric-gear:block/copper_pipeline_flat",
+        "x": 180
+      },
+      "when": {
+        "facing": "down",
+        "up": "false"
+      }
     },
-    "facing=up": {
-      "model": "electric-gear:block/copper_pipeline"
+    {
+      "apply": {
+        "model": "electric-gear:block/copper_pipeline",
+        "x": 90
+      },
+      "when": {
+        "facing": "north",
+        "up": "true"
+      }
     },
-    "facing=west": {
-      "model": "electric-gear:block/copper_pipeline",
-      "x": 90,
-      "y": 270
+    {
+      "apply": {
+        "model": "electric-gear:block/copper_pipeline_flat",
+        "x": 90
+      },
+      "when": {
+        "facing": "north",
+        "up": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "electric-gear:block/copper_pipeline",
+        "x": 90,
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "up": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "electric-gear:block/copper_pipeline_flat",
+        "x": 90,
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "up": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "electric-gear:block/copper_pipeline",
+        "x": 90,
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "up": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "electric-gear:block/copper_pipeline_flat",
+        "x": 90,
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "up": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "electric-gear:block/copper_pipeline",
+        "x": 90,
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "up": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "electric-gear:block/copper_pipeline_flat",
+        "x": 90,
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "up": "false"
+      }
     }
-  }
+  ]
 }

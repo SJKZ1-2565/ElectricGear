@@ -7,9 +7,11 @@ import com.sjkz1.enchant.ModEnchants;
 import com.sjkz1.item.ModItem;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.entity.damage.DamageType;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroups;
 import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -78,6 +80,14 @@ public class ElectricGear implements ModInitializer {
         ModItem.init();
         ModBlock.init();
         ModEnchants.init();
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.REDSTONE)
+                .register((itemGroup) -> itemGroup.add(ModBlock.COPPER_PIPELINE));
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS)
+                .register((itemGroup) -> itemGroup.addAfter(Items.STONE_HOE, ModItem.COPPER_SHOVEL, ModItem.COPPER_PICKAXE, ModItem.COPPER_AXE, ModItem.COPPER_HOE));
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT)
+                .register((itemGroup) -> itemGroup.addAfter(Items.STONE_SWORD, ModItem.COPPER_SWORD));
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT)
+                .register((itemGroup) -> itemGroup.addAfter(Items.STONE_AXE, ModItem.COPPER_AXE));
         CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> GiveAllTrimToolsCommand.register(dispatcher));
         LOGGER.info("Hello Fabric world!");
     }

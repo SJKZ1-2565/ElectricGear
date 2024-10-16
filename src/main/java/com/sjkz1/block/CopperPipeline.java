@@ -11,6 +11,7 @@ import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.state.StateManager;
+import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.DirectionProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.*;
@@ -20,11 +21,13 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldAccess;
 import org.jetbrains.annotations.Nullable;
 
 public class CopperPipeline extends BlockWithEntity {
 
     public static final DirectionProperty FACING = Properties.FACING;
+    public static final BooleanProperty UP = Properties.UP;
 
     protected static final VoxelShape Y_SHAPE = Block.createCuboidShape(4.0, 0.0, 4.0, 12.0, 16.0, 12.0);
     protected static final VoxelShape Z_SHAPE = Block.createCuboidShape(4.0, 4.0, 0.0, 12.0, 12.0, 16.0);
@@ -33,12 +36,12 @@ public class CopperPipeline extends BlockWithEntity {
 
     protected CopperPipeline(Settings settings) {
         super(settings);
-        this.setDefaultState(this.stateManager.getDefaultState().with(FACING, Direction.UP));
+        this.setDefaultState(this.stateManager.getDefaultState().with(FACING, Direction.UP).with(UP, true));
     }
 
     @Override
     public BlockState getPlacementState(ItemPlacementContext ctx) {
-        return this.getDefaultState().with(FACING, ctx.getSide());
+        return this.getDefaultState().with(FACING, ctx.getSide().getOpposite());
     }
 
     @Override
@@ -48,6 +51,17 @@ public class CopperPipeline extends BlockWithEntity {
             case Z -> Z_SHAPE;
             case Y -> Y_SHAPE;
         };
+    }
+
+    @Override
+    public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
+        var otherState = world.getBlockState(pos.offset(state.get(FACING)));
+
+        if (otherState.isOf(this)) {
+            return state.with(UP, false);
+        }
+
+        return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
     }
 
     @Override
@@ -126,7 +140,7 @@ public class CopperPipeline extends BlockWithEntity {
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(FACING);
+        builder.add(FACING).add(UP);
     }
 
 }

@@ -10,7 +10,9 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.block.Block;
 import net.minecraft.data.client.*;
 import net.minecraft.item.*;
+import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.Direction;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Map;
@@ -43,7 +45,7 @@ public class ElectricGearModelGenerator extends FabricModelProvider {
         itemModelGenerator.register(ModItem.COPPER_HELMET, Models.GENERATED);
         itemModelGenerator.register(ModItem.COPPER_CHESTPLATE, Models.GENERATED);
         itemModelGenerator.register(ModItem.COPPER_LEGGINGS, Models.GENERATED);
-        itemModelGenerator.register(ModItem.COPPER_BOOTS, Models.GENERATED);;
+        itemModelGenerator.register(ModItem.COPPER_BOOTS, Models.GENERATED);
         for (Item item : ElectricGear.ITEM) {
             registerCustomToolTrim(itemModelGenerator, item);
         }
@@ -109,9 +111,21 @@ public class ElectricGearModelGenerator extends FabricModelProvider {
 
     private void registerCopperPipeline(BlockStateModelGenerator blockStateModelGenerator) {
         Block block = ModBlock.COPPER_PIPELINE;
-        blockStateModelGenerator.blockStateCollector
-                .accept(
-                        VariantsBlockStateSupplier.create(block, BlockStateVariant.create().put(VariantSettings.MODEL, ModelIds.getBlockModelId(block)))
-                                .coordinate(blockStateModelGenerator.createUpDefaultFacingVariantMap()));
+        var modelId = ModelIds.getBlockModelId(block);
+        var flatModelId = ModelIds.getBlockSubModelId(block, "_flat");
+        var model = MultipartBlockStateSupplier.create(block)
+                .with(When.create().set(Properties.FACING, Direction.UP).set(Properties.UP, true), BlockStateVariant.create().put(VariantSettings.MODEL, modelId))
+                .with(When.create().set(Properties.FACING, Direction.UP).set(Properties.UP, false), BlockStateVariant.create().put(VariantSettings.MODEL, flatModelId))
+                .with(When.create().set(Properties.FACING, Direction.DOWN).set(Properties.UP, true), BlockStateVariant.create().put(VariantSettings.MODEL, modelId).put(VariantSettings.X, VariantSettings.Rotation.R180))
+                .with(When.create().set(Properties.FACING, Direction.DOWN).set(Properties.UP, false), BlockStateVariant.create().put(VariantSettings.MODEL, flatModelId).put(VariantSettings.X, VariantSettings.Rotation.R180))
+                .with(When.create().set(Properties.FACING, Direction.NORTH).set(Properties.UP, true), BlockStateVariant.create().put(VariantSettings.MODEL, modelId).put(VariantSettings.X, VariantSettings.Rotation.R90))
+                .with(When.create().set(Properties.FACING, Direction.NORTH).set(Properties.UP, false), BlockStateVariant.create().put(VariantSettings.MODEL, flatModelId).put(VariantSettings.X, VariantSettings.Rotation.R90))
+                .with(When.create().set(Properties.FACING, Direction.SOUTH).set(Properties.UP, true), BlockStateVariant.create().put(VariantSettings.MODEL, modelId).put(VariantSettings.X, VariantSettings.Rotation.R90).put(VariantSettings.Y, VariantSettings.Rotation.R180))
+                .with(When.create().set(Properties.FACING, Direction.SOUTH).set(Properties.UP, false), BlockStateVariant.create().put(VariantSettings.MODEL, flatModelId).put(VariantSettings.X, VariantSettings.Rotation.R90).put(VariantSettings.Y, VariantSettings.Rotation.R180))
+                .with(When.create().set(Properties.FACING, Direction.WEST).set(Properties.UP, true), BlockStateVariant.create().put(VariantSettings.MODEL, modelId).put(VariantSettings.X, VariantSettings.Rotation.R90).put(VariantSettings.Y, VariantSettings.Rotation.R270))
+                .with(When.create().set(Properties.FACING, Direction.WEST).set(Properties.UP, false), BlockStateVariant.create().put(VariantSettings.MODEL, flatModelId).put(VariantSettings.X, VariantSettings.Rotation.R90).put(VariantSettings.Y, VariantSettings.Rotation.R270))
+                .with(When.create().set(Properties.FACING, Direction.EAST).set(Properties.UP, true), BlockStateVariant.create().put(VariantSettings.MODEL, modelId).put(VariantSettings.X, VariantSettings.Rotation.R90).put(VariantSettings.Y, VariantSettings.Rotation.R90))
+                .with(When.create().set(Properties.FACING, Direction.EAST).set(Properties.UP, false), BlockStateVariant.create().put(VariantSettings.MODEL, flatModelId).put(VariantSettings.X, VariantSettings.Rotation.R90).put(VariantSettings.Y, VariantSettings.Rotation.R90));
+        blockStateModelGenerator.blockStateCollector.accept(model);
     }
 }

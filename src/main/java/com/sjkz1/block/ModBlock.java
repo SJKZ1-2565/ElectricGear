@@ -20,7 +20,6 @@ public class ModBlock {
     public static void init() {
         registerBlock(COPPER_PIPELINE, "copper_pipeline");
         registerBlockItem(COPPER_PIPELINE, "copper_pipeline");
-
     }
 
     static void registerBlock(Block block, String string) {
